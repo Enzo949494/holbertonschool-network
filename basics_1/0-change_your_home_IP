@@ -8,7 +8,7 @@ cp /etc/hosts /etc/hosts.bak
 grep -v -E 'localhost|facebook\.com' /etc/hosts.bak > /etc/hosts
 
 # Add the new required entries
-echo -e "127.0.0.2\tlocalhost" >> /etc/hosts
+echo -e "127.0.0.1\tlocalhost" >> /etc/hosts
 echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts
 
 echo "Updated /etc/hosts:"
