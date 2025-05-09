@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Backup the current /etc/hosts file
+cp /etc/hosts /etc/hosts.bak
+
+# Remove existing localhost and facebook.com entries
+grep -v -E 'localhost|facebook\.com' /etc/hosts.bak > /etc/hosts
+
+# Add the new required entries
+echo -e "127.0.0.2\tlocalhost" >> /etc/hosts
+echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts
+
+echo "Updated /etc/hosts:"
+cat /etc/hosts
